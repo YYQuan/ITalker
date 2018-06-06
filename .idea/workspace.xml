@@ -7,21 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c6a7e-7397-4756-95bb-dca170595f65" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/ITalker_main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/Apply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/GroupMember.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/PushHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/UserFollow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/ITalker-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/ITalker-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/ITalker-1.0-SNAPSHOT.war/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/ITalker-1.0-SNAPSHOT.war/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -60,11 +53,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="information_schema: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
     </expand>
     <select />
   </component>
@@ -92,29 +80,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6d220141-d525-4bab-acf8-103dee1ca086/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="35" column="54" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="hibernate.cfg.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -164,11 +129,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserFollow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/UserFollow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="891">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupMember.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/GroupMember.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="398">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PushHistory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/PushHistory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="68" column="50" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -570,10 +571,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1940" />
-    <option name="y" value="253" />
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="1913" />
+    <option name="y" value="251" />
+    <option name="width" value="814" />
+    <option name="height" value="867" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -682,14 +683,15 @@
     <property name="settings.editor.selected.configurable" value="gradle.experimental" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Android\IDEAProject\ITalker\src\main\webapp\WEB-INF" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Android\IDEAProject\ITalker\src\main\java\net\qiujuer\web\italker\push\bean\db" />
       <recent name="F:\Android\IDEAProject\ITalker\src\main\java\net\qiujuer\web\italker\push\bean" />
       <recent name="F:\Android\IDEAProject\ITalker\src\main\java" />
       <recent name="F:\Android\IDEAProject\ITalker\src\main\webapp\WEB-INF" />
       <recent name="F:\Android\IDEAProject\ITalker\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Android\IDEAProject\ITalker\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -911,18 +913,27 @@
       <workItem from="1528123012029" duration="1319000" />
       <workItem from="1528125725717" duration="615000" />
       <workItem from="1528201515127" duration="5904000" />
-      <workItem from="1528286359124" duration="409000" />
+      <workItem from="1528286359124" duration="7645000" />
     </task>
+    <task id="LOCAL-00001" summary="web 3.3">
+      <created>1528286829104</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528286829104</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8247000" />
+    <option name="totallyTimeSpent" value="15483000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="243" width="1616" height="876" extended-state="6" />
+    <frame x="1912" y="243" width="1616" height="876" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50064266" side_tool="true" weight="0.32959327" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3298292" />
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -940,9 +951,9 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22580644" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4993573" visible="true" weight="0.32959327" />
       <window_info id="Persistence" order="8" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20565553" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11825193" />
       <window_info anchor="right" id="Bean Validation" order="10" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.32969153" />
@@ -963,6 +974,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="web 3.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="web 3.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1092,13 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/service/AccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -1110,10 +1118,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="56" column="33" lean-forward="true" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/UserFollow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/GroupMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="398">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/qiujuer/web/italker/push/bean/db/PushHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="68" column="50" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="50" />
         </state>
       </provider>
     </entry>
