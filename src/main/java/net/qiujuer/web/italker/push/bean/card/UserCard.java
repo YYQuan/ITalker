@@ -1,6 +1,7 @@
 package net.qiujuer.web.italker.push.bean.card;
 
 import com.google.gson.annotations.Expose;
+import net.qiujuer.web.italker.push.bean.db.User;
 
 import java.time.LocalDateTime;
 
@@ -38,6 +39,20 @@ public class UserCard {
     @Expose
     private LocalDateTime modifyAt;
 
+
+    public UserCard(final User user) {
+        this.id =user.getId();
+        this.name = user.getName();
+        this.phone = user.getName();
+        this.portrait = user.getPortrait();
+        this.desc = user.getDescription();
+        this.sex = user.getSex();
+        this.modifyAt = user.getUpdateAt();
+
+
+
+
+    }
 
     public String getId() {
         return id;
