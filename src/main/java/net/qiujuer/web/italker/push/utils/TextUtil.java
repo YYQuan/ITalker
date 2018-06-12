@@ -39,7 +39,9 @@ public class TextUtil {
      * @return 进行Base64编码后的字符串
      */
     public static String encodeBase64(String str) {
-        return Base64.getEncoder().encodeToString(str.getBytes());
+        return Base64
+                .getEncoder()
+                .encodeToString(str.getBytes());
     }
 
     /**

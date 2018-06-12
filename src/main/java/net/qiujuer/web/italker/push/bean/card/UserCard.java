@@ -39,20 +39,27 @@ public class UserCard {
     @Expose
     private LocalDateTime modifyAt;
 
-
     public UserCard(final User user) {
-        this.id =user.getId();
+        this(user, false);
+    }
+
+    public UserCard(final User user, boolean isFollow) {
+        this.isFollow = isFollow;
+
+        this.id = user.getId();
         this.name = user.getName();
-        this.phone = user.getName();
+        this.phone = user.getPhone();
         this.portrait = user.getPortrait();
         this.desc = user.getDescription();
         this.sex = user.getSex();
         this.modifyAt = user.getUpdateAt();
 
-
-
+        // TODO 得到关注人和粉丝的数量
+        // user.getFollowers().size()
+        // 懒加载会报错，因为没有Session
 
     }
+
 
     public String getId() {
         return id;
