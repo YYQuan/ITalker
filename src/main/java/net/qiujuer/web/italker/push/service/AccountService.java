@@ -39,7 +39,6 @@ public class AccountService {
                 if(!Strings.isNullOrEmpty(model.getPushId())){
                     return bind(user,model.getPushId());
                 }
-
                 AccountRspModel rspModel  = new AccountRspModel(user);
                 return  ResponseModel.buildOk(rspModel);
             }else{

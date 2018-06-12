@@ -115,7 +115,10 @@ public class UserFactory {
         user.setPhone(account);
 
         //数据库存储
-        return Hib.query(session->(User)session.save(user));
+        return Hib.query(session-> {
+            session.save(user);
+            return user;
+        });
 
     }
 
