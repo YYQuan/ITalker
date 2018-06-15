@@ -143,6 +143,20 @@ public class UserFactory {
     }
 
     /**
+     * 更新用户信息到数据库
+     *
+     * @param user User
+     * @return User
+     */
+    public static User update(User user) {
+        return Hib.query(session -> {
+            session.saveOrUpdate(user);
+            return user;
+        });
+    }
+
+
+    /**
      * 给当前账户绑定PushId
      * @param user
      * @param pushId
