@@ -2,12 +2,16 @@ package net.qiujuer.web.italker.push.factory;
 
 import com.google.common.base.Strings;
 import net.qiujuer.web.italker.push.bean.db.User;
+import net.qiujuer.web.italker.push.bean.db.UserFollow;
 import net.qiujuer.web.italker.push.utils.Hib;
 import net.qiujuer.web.italker.push.utils.TextUtil;
 import org.hibernate.Session;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * @author qiujuer Email:qiujuer@live.cn
@@ -28,6 +32,9 @@ public class UserFactory {
                 .uniqueResult());
     }
 
+    public static User findById(String id) {
+        return Hib.query(session ->  session.get(User.class,id));
+    }
 
 
     //通过Token字段查询用户信息
@@ -201,4 +208,101 @@ public class UserFactory {
     }
 
 
+
+    /**
+     * 获取我的联系人的列表
+     *
+     * @param self User
+     * @return List<User>
+     */
+    public static List<User> contacts(User self) {
+        return Hib.query(session -> {
+            // 重新加载一次用户信息到self中，和当前的session绑定
+            session.load(self, self.getId());
+
+            // 获取我关注的人
+            Set<UserFollow> flows = self.getFollowing();
+
+            // 使用简写方式
+            return flows.stream()
+                    .map(UserFollow::getTarget)
+                    .collect(Collectors.toList());
+
+        });
+    }
+
+
+    /**
+     * 关注人的操作
+     *
+     * 简化为：单方面发起的关注 其实就完成了双方同时关注
+     * @param origin  发起者
+     * @param target    被关注的人
+     * @param alias     备注名称
+     * @return  被关注的人的信息
+     */
+    public static User follow(final User origin,final  User target,final String alias){
+        UserFollow follow  =getUserFollow(origin ,target);
+        if(follow!=null){
+            return follow.getTarget();
+        }
+        return Hib.query(session -> {
+            //操作懒加载的数据需要重新load一次
+            session.load(origin,origin.getId());
+            session.load(target,target.getId());
+
+            UserFollow  originFollow  = new UserFollow();
+            originFollow.setOrigin(origin);
+            originFollow.setTarget(target);
+            originFollow.setAlias(alias);
+
+            UserFollow  targetFollow  = new UserFollow();
+            targetFollow.setOrigin(target);
+            targetFollow.setTarget(origin);
+
+            session.save(originFollow);
+            session.save(targetFollow);
+
+            return target;
+
+        });
+    }
+
+
+    /**
+     * 查询两个人是否已经是关注状态
+     * @param origin
+     * @param target
+     * @return
+     */
+    public  static UserFollow getUserFollow(final User origin,final  User target){
+        return Hib.query(session ->
+            (UserFollow) session.createQuery("from UserFollow where  originId  = :originId and targetId = :targetId")
+                    .setParameter("originId",origin.getId())
+                    .setParameter("targetId",target.getId())
+                    .setMaxResults(1)
+                    .uniqueResult());
+
+    }
+
+    /**
+     *
+     * @param name
+     * @return
+     */
+    public static List<User> search(String name) {
+        if(Strings.isNullOrEmpty(name)){
+            name= "";
+        }
+
+        final String  searchName = "%" +name+"%";
+
+        return  Hib.query(session -> {
+            //like  模糊查询   name 忽略大小写
+            return (List<User>) session.createQuery("from User  where lower(name)  like :name and portrait is not null and description is not null")
+                    .setParameter("name",searchName)
+                    .setMaxResults(20)
+                    .list();
+        });
+    }
 }
