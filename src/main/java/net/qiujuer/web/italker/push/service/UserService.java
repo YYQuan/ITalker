@@ -2,11 +2,13 @@ package net.qiujuer.web.italker.push.service;
 
 import com.google.common.base.Strings;
 import net.bytebuddy.agent.builder.AgentBuilder;
+import net.qiujuer.web.italker.push.bean.api.base.PushModel;
 import net.qiujuer.web.italker.push.bean.api.base.ResponseModel;
 import net.qiujuer.web.italker.push.bean.api.user.UpdateInfoModel;
 import net.qiujuer.web.italker.push.bean.card.UserCard;
 import net.qiujuer.web.italker.push.bean.db.User;
 import net.qiujuer.web.italker.push.factory.UserFactory;
+import net.qiujuer.web.italker.push.utils.PushDispatcher;
 
 import javax.validation.constraints.Null;
 import javax.ws.rs.*;
@@ -56,6 +58,7 @@ public class UserService extends BaseService {
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseModel<List<UserCard> > contact(){
         User selfUser  = getSelf();
+
         List<User>  users = UserFactory.contacts(selfUser);
         List<UserCard> userCards = users.stream()
                 .map(user -> new UserCard(user, true))
